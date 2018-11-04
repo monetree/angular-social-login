@@ -1,0 +1,34 @@
+<!-- <div *ngIF="user?.uid;else loginBox">
+  <div style="text-align:center;">
+    <h1>
+      Welcome to {{title}}!!
+    </h1>
+    </div>
+    <button {click}="logout">Logout</button>
+    </div>
+
+<div *ngIF="isLoggedIn()">
+  <ul>
+    <label><b>topics</b></label>
+    <li class="text" *ngFor="let topic of topics | async">
+{{topic.$value}}
+    </li>
+  </ul>
+</div>
+
+<ng-template #loginBox>
+  <div style="text-align:center;">
+  <h1>
+    login to {{title}}!!
+  </h1>
+  </div>
+
+</ng-template>  -->
+
+<button (click)="loginWithGoogle()">Login with Google</button>
+<br><br>
+
+<button (click)="loginWithFacebook()">Login with facebook</button>
+<br><br>
+
+<!-- <button (click)="loginWithGitHub()">Login with github</button> -->
