@@ -12,6 +12,7 @@ constructor(public afAuth: AngularFireAuth) {
     this.authState = this.afAuth.authState;
     this.authState.subscribe(user => {
       if (user) {
+        console.log(user['providerData'][0]);
         this.currentUser = user;
       } else {
         this.currentUser = null;
@@ -28,6 +29,11 @@ constructor(public afAuth: AngularFireAuth) {
   loginWithFacebook() {
     return this.afAuth.auth.signInWithPopup(
       new firebase.auth.FacebookAuthProvider());
+  }
+
+  loginWithGithub() {
+    return this.afAuth.auth.signInWithPopup(
+      new firebase.auth.GithubAuthProvider());
   }
 
   isLoggedIn() {

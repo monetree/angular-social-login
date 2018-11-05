@@ -19,7 +19,6 @@ constructor(private auth: AuthService, public db: AngularFireDatabase) { }
 ngOnInit() {
     this.auth.getAuthState().subscribe(
       (user) => this.user = user);
-      console.log(this.user);
       this.topics = this.db.list('/topics');
   }
   loginWithGoogle() {
@@ -29,9 +28,9 @@ ngOnInit() {
     this.auth.loginWithFacebook();
   }
 
-  // loginWithGitHub () {
-  //   this.auth.loginWithGitHub();
-  // }
+  loginWithGitHub () {
+    this.auth.loginWithGithub();
+  }
 
 
 
